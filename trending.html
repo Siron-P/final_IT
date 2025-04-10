@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* Adding user avatar styles */
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #1DB954;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background-color: #282828;
+            border-radius: 4px;
+            width: 180px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 100;
+        }
+        
+        .dropdown-menu ul {
+            list-style: none;
+            padding: 8px 0;
+            margin: 0;
+        }
+        
+        .dropdown-menu ul li {
+            padding: 10px 15px;
+            margin: 0;
+        }
+        
+        .dropdown-menu ul li:hover {
+            background-color: #333;
+        }
+        
+        .dropdown-menu ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-menu.active {
+            display: block;
+        }
+        
+        /* For avatar container in nav */
+        .avatar-container {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <div class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwkxDkgEuPAcFHaJ-v6m90Sh20dQwUxkJl0w&s" alt="Spotify">
+            </div>
+            <div class="home">
+                <a href="index.html"><i class="bi bi-house"></i></a>
+            </div>
+        </div>
+        <div class="right">
+            <div class="nav">
+                <ul id="navigation-menu">
+                    <li><a href="genre.html">Genre</a></li>
+                    <li><a href="trending.html" class="active">Trending</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li id="sign-up-menu-item"><a href="signUp.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="playing">
+           <h1>Now Playing</h1>
+            <div class="album">
+                <img src="https://cdn-images.dzcdn.net/images/cover/22abb990857654105f908a558ea78bc1/1900x1900-000000-80-0-0.jpg" alt="Album Cover">
+            </div>    
+            <div class="info">
+                <p>I Was Made For Lovin' You</p>
+                <p><a href="https://open.spotify.com/artist/07XSN3sPlIlB2L2XNcTwJw" target="_blank">KISS</p></a>
+            </div>
+            <div class="audio">
+                <audio id="basic-player" controls>
+                    <source src="trending.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="bottom">
+                <div class="legal">
+                <ul>
+                    <li><a href="https://www.spotify.com/np-en/legal/end-user-agreement/">Legal</a></li>
+                    <li><a href="https://www.spotify.com/np-en/safetyandprivacy">Safety</a></li>
+                    <li><a href="https://www.spotify.com/np-en/legal/privacy-policy/">Privacy</a></li>
+                    <li><a href="https://www.spotify.com/np-en/legal/cookies-policy/">Cookies</a></li>    
+                </ul>
+            </div>
+            <div class="language">
+                <select name="" id="">
+                    <option value="1">English</option>
+                    <option value="2">Nepali</option>
+                    
+                </select>
+            </div>
+            </div>
+            </div>
+            <div class="mainitem">
+                <div class="belowheader">
+                    <div class="heading">
+                        <h1>Trending Now</h1>
+                    </div>
+                    <div class="subheading">
+                        <p>Discover what's hot in music right now</p>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="section-head">
+                        <h2 class="section-title">Trending Songs</h2>
+                        <a href="#" class="more">See All</a>
+                    </div>
+                    
+                  
+                    <div class="chart">
+                        <h3 class="chart-title">Top 5 This Week</h3>
+                        
+                        <div class="chart-item">
+                            <div class="chart-rank">1</div>
+                            <div class="chart-img"><img src="https://i1.sndcdn.com/artworks-EMjUicmFU2R2oghz-scNPqQ-t1080x1080.jpg" alt=""></div>
+                            <div class="chart-info">
+                                <div class="chart-name">Anxiety</div>
+                                <div class="chart-artist">Doechii</div>
+                            </div>
+                            <div class="chart-time">4:09</div>
+                        </div>
+                        
+                        <div class="chart-item">
+                            <div class="chart-rank">2</div>
+                            <div class="chart-img"><img src="https://external-preview.redd.it/fresh-tyler-the-creator-sticky-v0-5f8THUedAqrUbjSiErxTZ2B8qqlgsYPoSAtHdGtWAkU.jpg?auto=webp&s=e7fc382c6e62d0c100c6d3a8c7147626f4ac04fd" alt=""></div>
+                            <div class="chart-info">
+                                <div class="chart-name">Sticky</div>
+                                <div class="chart-artist">Tyler, The Creator</div>
+                            </div>
+                            <div class="chart-time">4:15</div>
+                        </div>
+                        
+                        <div class="chart-item">
+                            <div class="chart-rank">3</div>
+                            <div class="chart-img"><img src="https://images.genius.com/1002019aef32d64eacafbfbe86467c39.1000x1000x1.png" alt=""></div>
+                            <div class="chart-info">
+                                <div class="chart-name">Symphony</div>
+                                <div class="chart-artist">Clean Bandit, Zara Larson</div>
+                            </div>
+                            <div class="chart-time">3:32</div>
+                        </div>
+                        
+                        <div class="chart-item">
+                            <div class="chart-rank">4</div>
+                            <div class="chart-img"><img src="https://i1.sndcdn.com/artworks-nPyHd5ydS8uWkS9Q-ictzjw-t500x500.jpg" alt=""></div>
+                            <div class="chart-info">
+                                <div class="chart-name">Embrace It</div>
+                                <div class="chart-artist">Ndotz</div>
+                            </div>
+                            <div class="chart-time">1:44</div>
+                        </div>
+                        
+                        <div class="chart-item">
+                            <div class="chart-rank">5</div>
+                            <div class="chart-img"><img src="https://i.ytimg.com/vi/C4m01w5Nj1o/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBA6tiOT0nm5K1QKSqrv2rTXIJmfw" alt=""></div>
+                            <div class="chart-info">
+                                <div class="chart-name">New Drop</div>
+                                <div class="chart-artist">Don Toliver</div>
+                            </div>
+                            <div class="chart-time">3:37</div>
+                        </div>
+                    </div>
+                    
+              
+                    <h3 class="chart-title">More Trending Songs</h3>
+                    <div class="grid">
+                        <div class="song">
+                            <div class="song-img"><img src="https://images.genius.com/e7b13febc8077bf15c5e543ad2aa6a3a.1000x1000x1.png" alt=""></div>
+                            <div class="song-info">
+                                <div class="song-name">Sailor Song</div>
+                                <div class="song-artist">Gigi Perez</div>
+                            </div>
+                        </div>
+                        
+                        <div class="song">
+                            <div class="song-img"><img src="https://i.ytimg.com/vi/KVgDjivrjjM/maxresdefault.jpg" alt=""></div>
+                            <div class="song-info">
+                                <div class="song-name">Cry For Me</div>
+                                <div class="song-artist">The Weekend</div>
+                            </div>
+                          
+                        </div>
+                        
+                        <div class="song">
+                            <div class="song-img"><img src="https://i.ytimg.com/vi/fCeiUX59_FM/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGH8gEygrMA8=&rs=AOn4CLDg13S34X4mMWq_CiEOVCymqrfR2w" alt=""></div>
+                            <div class="song-info">
+                                <div class="song-name">No Pole</div>
+                                <div class="song-artist">Don Toliver</div>
+                            </div>
+                         
+                        </div>
+                        
+                        <div class="song">
+                            <div class="song-img"><img src="https://images.genius.com/a38b517ebf0f0df7a898321f2385c3d0.300x300x1.png" alt=""></div>
+                            <div class="song-info">
+                                <div class="song-name">BIRDS OF A FEATHER</div>
+                                <div class="song-artist">Billie Ellish</div>
+                            </div>
+                           
+                        </div>
+                        
+                        <div class="song">
+                            <div class="song-img"><img src="https://i.ytimg.com/vi/Csst0G-QfkU/maxresdefault.jpg" alt=""></div>
+                            <div class="song-info">
+                                <div class="song-name">Dark Thoughts/div>
+                                <div class="song-artist">Lil Tecca</div>
+                            </div>
+                         
+                        </div>
+                        
+                        <div class="song">
+                            <div class="song-img"><img src="https://i.ytimg.com/vi/fMnI5fH_aP4/maxresdefault.jpg" alt=""></div>
+                            <div class="song-info">
+                                <div class="song-name">Run It Up</div>
+                                <div class="song-artist">Hanumankind</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+              
+                <div class="section">
+                    <div class="section-head">
+                        <h2 class="section-title">Trending Albums</h2>
+                        <a href="#" class="more">See All</a>
+                    </div>
+                    
+                    <div class="grid">
+                        <div class="albums">
+                            <div class="albums-img">
+                                <img src="https://media.pitchfork.com/photos/679cccbab742af95ca81e4fe/2:3/w_2000,h_3000,c_limit/The-Weeknd-Hurry-Up-Tomorrow.jpeg" alt="">
+                                <div class="albums-play">▶</div>
+                            </div>
+                            <div class="albums-name">Hurry Up Tomorrow</div>
+                            <div class="albums-artist">The Weekend</div>
+                        </div>
+                        
+                        <div class="albums">
+                            <div class="albums-img">
+                                <img src="https://i.scdn.co/image/ab67616d0000b273124e9249fada4ff3c3a0739c" alt="">
+                                <div class="albums-play">▶</div>
+                            </div>
+                            <div class="albums-name">Chromakopia</div>
+                            <div class="albums-artist">Tyler, The Creator</div>
+                        </div>
+                        
+                        <div class="albums">
+                            <div class="albums-img">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/9/93/Kendrick_Lamar_-_GNX.png" alt="">
+                                <div class="albums-play">▶</div>
+                            </div>
+                            <div class="albums-name">GNX</div>
+                            <div class="albums-artist">Kendrick Lamar</div>
+                        </div>
+                        
+                        <div class="albums">
+                            <div class="albums-img">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/8/8a/Future_and_Metro_Boomin_-_We_Don%27t_Trust_You.png" alt="">
+                                <div class="albums-play">▶</div>
+                            </div>
+                            <div class="albums-name">We Don't Trust You</div>
+                            <div class="albums-artist">Metro Booming and Future</div>
+                        </div>
+                        
+                        <div class="albums">
+                            <div class="albums-img">
+                                <div class="albums-play">▶</div>
+                                <img src="https://i.scdn.co/image/ab67616d00001e02c4fee55d7b51479627c31f89" alt="">
+                            </div>
+                            <div class="albums-name">HEROES & VILLAINS</div>
+                            <div class="albums-artist">Metro Boomin</div>
+                        </div>
+                        
+                        <div class="albums">
+                            <div class="albums-img">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Ariana_Grande_-_Eternal_Sunshine.png" alt="">
+                                <div class="albums-play">▶</div>
+                            </div>
+                            <div class="albums-name">Eternal Sunshines</div>
+                            <div class="albums-artist">Ariana Grande</div>
+                        </div>
+                    </div>
+                </div>
+                
+               
+                <div class="section">
+                    <div class="section-head">
+                        <h2 class="section-title">Trending Artists</h2>
+                        <a href="#" class="more">See All</a>
+                    </div>
+                    
+                    <div class="grid">
+                        <div class="artist">
+                            <div class="artist-img">
+                                <img src="https://hips.hearstapps.com/hmg-prod/images/kendrick-lamar-at-the-67th-grammy-awards-held-at-the-crypto-news-photo-1738959019.pjpeg?crop=1.00xw:0.667xh;0,0.0715xh&resize=640:*" alt="">
+                            </div>
+                            <div class="artist-name">Kendrick Lamar</div>
+                            <div class="artist-genre">Hip-Hop, Rap</div>
+                        </div>
+                        
+                        <div class="artist">
+                            <div class="artist-img">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4kUzHGD6GNCL9D-kpZWMK4ADbwTUDgp-OhQ&s" alt="">
+                            </div>
+                            <div class="artist-name">The Weeknd</div>
+                            <div class="artist-genre">R&B, Pop</div>
+                        </div>
+                        
+                        <div class="artist">
+                            <div class="artist-img"><img src="https://media.gq.com/photos/644038e15daed7b7f1840d38/master/w_2560%2Cc_limit/DT_CR_HYPE_1-r1.jpg" alt=""></div>
+                            <div class="artist-name">Don Toliver</div>
+                            <div class="artist-genre">Hip-Hop, Rap</div>
+                        </div>
+                        
+                        <div class="artist">
+                            <div class="artist-img">
+                                <img src="https://uproxx.com/wp-content/uploads/2024/02/sza_BHM1024x450.jpg?w=1024&h=450&crop=1" alt="">
+                            </div>
+                            <div class="artist-name">SZA</div>
+                            <div class="artist-genre">R&B</div>
+                        </div>
+                        
+                        <div class="artist">
+                            <div class="artist-img">
+                                <img src="https://pbs.twimg.com/profile_images/634514155261833216/czgYrPLQ_200x200.jpg" alt="">
+                            </div>
+                            <div class="artist-name">Travis Scott</div>
+                            <div class="artist-genre">Hip-Hop</div>
+                        </div>
+                        
+                        <div class="artist">
+                            <div class="artist-img">
+                                <img src="https://c.saavncdn.com/artists/Arijit_Singh_004_20241118063717_500x500.jpg" alt="">
+                            </div>
+                            <div class="artist-name">Arjit Singh</div>
+                            <div class="artist-genre">Pop</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <div class="footer">
+        <div class="company">
+            <h1>Company</h1>
+            <div class="ajpn">
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="https://www.lifeatspotify.com/">Jobs</a></li>
+                    <li><a href="https://newsroom.spotify.com/">News</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="community">
+            <h1>Communities</h1>
+            <div class="creators">
+                <ul>
+                    <li><a href="https://artists.spotify.com/home">For Creators</a></li>
+                    <li><a href="https://developer.spotify.com/">Developers</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="connect">
+            <h1>Connect With Me</h1>
+            <div class="socials">
+                <ul>
+                    <li><a href="https://www.instagram.com/nishchal.7.3/" target="_blank"><i class="bi bi-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/Nishchal7310" target="_blank"><i class="bi bi-facebook"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is already logged in
+            const loggedInUser = localStorage.getItem('musicifyUser');
+            if (loggedInUser) {
+                updateNavForLoggedInUser(JSON.parse(loggedInUser));
+            }
+        });
+        
+        // Function to update navigation for logged in user
+        function updateNavForLoggedInUser(user) {
+            const navigationMenu = document.getElementById('navigation-menu');
+            const signUpMenuItem = document.getElementById('sign-up-menu-item');
+            
+            // Remove sign up link
+            if (signUpMenuItem) {
+                navigationMenu.removeChild(signUpMenuItem);
+            }
+            
+            // Create avatar container
+            const avatarLi = document.createElement('li');
+            avatarLi.className = 'avatar-container';
+            
+            // Create user avatar
+            const avatarItem = document.createElement('div');
+            avatarItem.className = 'user-avatar';
+            
+            // Use first letter of name for avatar
+            avatarItem.textContent = user.name.charAt(0).toUpperCase();
+            
+            // Create dropdown menu
+            const dropdownMenu = document.createElement('div');
+            dropdownMenu.className = 'dropdown-menu';
+            dropdownMenu.innerHTML = `
+                <ul>
+                    <li><a href="#"><i class="bi bi-person"></i> Profile</a></li>
+                    <li><a href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                    <li><a href="#" id="logout-button"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                </ul>
+            `;
+            
+            // Toggle dropdown on avatar click
+            avatarItem.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('active');
+            });
+            
+            // Close dropdown when clicking elsewhere
+            document.addEventListener('click', function() {
+                dropdownMenu.classList.remove('active');
+            });
+            
+            // Add logout functionality
+            avatarLi.appendChild(avatarItem);
+            avatarLi.appendChild(dropdownMenu);
+            navigationMenu.appendChild(avatarLi);
+            
+            // Add event listener to logout button
+            setTimeout(() => {
+                const logoutButton = document.getElementById('logout-button');
+                if (logoutButton) {
+                    logoutButton.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        // Clear user data from localStorage
+                        localStorage.removeItem('musicifyUser');
+                        // Reload page to show sign up link again
+                        window.location.reload();
+                    });
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>
