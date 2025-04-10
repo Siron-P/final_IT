@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genre</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* Adding user avatar styles */
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #1DB954;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background-color: #282828;
+            border-radius: 4px;
+            width: 180px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 100;
+        }
+        
+        .dropdown-menu ul {
+            list-style: none;
+            padding: 8px 0;
+            margin: 0;
+        }
+        
+        .dropdown-menu ul li {
+            padding: 10px 15px;
+            margin: 0;
+        }
+        
+        .dropdown-menu ul li:hover {
+            background-color: #333;
+        }
+        
+        .dropdown-menu ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-menu.active {
+            display: block;
+        }
+        
+        /* For avatar container in nav */
+        .avatar-container {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <div class="logo">
+                <a href="index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwkxDkgEuPAcFHaJ-v6m90Sh20dQwUxkJl0w&s" alt="Spotify"></a>
+            </div>
+            <div class="home">
+                <a href="index.html"><i class="bi bi-house"></i></a>
+            </div>
+        </div>
+        <div class="right">
+            <div class="nav">
+                <ul id="navigation-menu">
+                    <li><a href="genre.html" class="active">Genre</a></li>
+                    <li><a href="trending.html">Trending</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li id="sign-up-menu-item"><a href="signUp.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="playing">
+            <p>Now Playing</p>
+            <div class="album">
+                <img src="https://i.pinimg.com/736x/54/bb/af/54bbaf6a16cc6662b8153f0654804134.jpg" alt="Album Cover">
+            </div>    
+            <div class="info">
+                <p>Party Monster</p>
+                <p><a href="https://open.spotify.com/artist/3FRYBFCNEBWMjk6kvwjHQT" target="_blank">The Weekend</p></a>
+            </div>
+            <div class="audio">
+                <audio id="basic-player" controls>
+                    <source src="ingenre.mp3" type="audio/mpeg"><i class="bi bi-chevron-right"></i>
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="bottom">
+                <div class="legal">
+                <ul>
+                    <li><a href="https://www.spotify.com/np-en/legal/end-user-agreement/">Legal</a></li>
+                    <li><a href="https://www.spotify.com/np-en/safetyandprivacy">Safety</a></li>
+                    <li><a href="https://www.spotify.com/np-en/legal/privacy-policy/">Privacy</a></li>
+                    <li><a href="https://www.spotify.com/np-en/legal/cookies-policy/">Cookies</a></li>    
+                </ul>
+            </div>
+            <div class="language">
+                <select name="" id="">
+                    <option value="1">English</option>
+                    <option value="2">Nepali</option>
+                    
+                </select>
+            </div>
+            </div>
+            </div>
+            <div class="spotify">
+            <h1>Browse all</h1>
+    
+            <div class="grids">
+                
+                <a href="https://open.spotify.com/genre/0JQ5DAqbMKFSi39LMRT0Cy" class="card c1">
+                    <h2 class="title">Music</h2>
+                    <div class="image">
+                      <img src="https://i.ytimg.com/vi/U5syMIJ5JRA/hqdefault.jpg?v=60d094d3" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+               
+                
+               
+               
+                
+               
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFOFhULVuQbjr" class="card c2">
+                    <h2 class="title">New Releases</h2>
+                    <div class="image">
+                      <img src="https://i.scdn.co/image/ab67616d0000b273f9a2359739728d2af3284a8e" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                
+                <a href="https://open.spotify.com/genre/0JQ5DAqbMKFEC4WFtoNRpw" class="card c3">
+                    <h2 class="title">POP</h2>
+                    <div class="image">
+                      <img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84836e2b0fa10fe9cf9ca9a854" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFQ00XGBls6ym" class="card c4">
+                    <h2 class="title">Hip Hop</h2>
+                    <div class="image">
+                      <img src="https://i.scdn.co/image/ab67616d0000b2738b52c6b9bc4e43d873869699    " alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFDXXwE9BDJAr" class="card c5">
+                    <h2 class="title">Rock</h2>
+                    <div class="image">
+                      <img src="https://i.scdn.co/image/ab67616d00001e02b95379557dbd1f0c30b7640e" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                
+               
+               <a href="https://open.spotify.com/genre/0JQ5DAqbMKFxXaXKP7zcDp" class="card c6">
+                    <h2 class="title">Latin</h2>
+                    <div class="image">
+                      <img src="https://www.listenspotify.com/uploaded_files/Thf_1646080407.jpg" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                
+               
+                    
+              
+                
+            
+                
+                  <a href="trending.html" class="card c7">
+                    <h2 class="title">Charts</h2>
+                    <div class="image">
+                      <img src="https://www.playlist-analyser.com/media/example3.png" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFHOzuVTgTizF" class="card c8">
+                    <h2 class="title">Electronic</h2>
+                    <div class="image">
+                      <img src="https://cdn-images.dzcdn.net/images/cover/28d79ed4bdb8a267f6eb83b18414043a/0x1900-000000-80-0-0.jpg" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                
+               <a href="https://open.spotify.com/genre/0JQ5DAqbMKFzHmL4tf05da" class="card c9">
+                    <h2 class="title">Mood</h2>
+                    <div class="image">
+                      <img src="https://lewisdonovan.dev/images/projects/mood-playlist.jpg" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFCWjUTdzaG0e" class="card c10">
+                    <h2 class="title">Indie</h2>
+                    <div class="image">
+                      <img src="https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72cc11902554864ceae72b07d08" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFAXlCG6QvYQ4" class="card c11">
+                    <h2 class="title">Workout</h2>
+                    <div class="image">
+                      <img src="https://i.scdn.co/image/ab67616d0000b2735ca12e898fac5a6161fbf1df" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFEZPnFQSFB1T" class="card c12">
+                    <h2 class="title">R&B</h2>
+                    <div class="image">
+                      <img src="https://singersroom.com/wp-content/uploads/2023/02/The-Weeknd.jpg" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFGvOw3O4nLAf" class="card c13">
+                    <h2 class="title">K-Pop</h2>
+                    <div class="image">
+                      <img src="https://koreajoongangdaily.joins.com/data/photo/2021/12/30/4a57c8dd-e66e-4196-b0a5-2abde93ee854.jpg" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFCuoRTxhYWow" class="card c1">
+                    <h2 class="title">Sleep</h2>
+                    <div class="image">
+                      <img src="https://i.scdn.co/image/ab67706f00000002cd17d41419faa97069e06c16" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFA6SOHvT3gck" class="card c2">
+                    <h2 class="title">Party</h2>
+                    <div class="image">
+                      <img src="https://i.scdn.co/image/ab67616d0000b273582277d3332d2b0f90563e84" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFHOzuVTgTizF" class="card c3">
+                    <h2 class="title">Dance</h2>
+                    <div class="image">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Mvpcs_Qgokrun3bnPC_CjN-aDJ7p3BKjFg&s" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFIVNxQgRNSg0" class="card c4">
+                    <h2 class="title">Decades</h2>
+                    <div class="image">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYx3AYdNvqfDCZ79kdxDPOlG60mEIHfptv6A&s" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFAUsdyVjCQuL" class="card c5">
+                    <h2 class="title">Love</h2>
+                    <div class="image">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5An5fl69dYmPWSVCdfzU1ZkT3l3731cr8EL2LdK1DoreSu0roNOcDoT4N6CJocR15P6w&usqp=CAU" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFDkd668ypn6O" class="card c6">
+                    <h2 class="title">Metal</h2>
+                    <div class="image">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Metallica_logo.png/2560px-Metallica_logo.png" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFAJ5xb0fwo9m" class="card c7">
+                    <h2 class="title">Jazz</h2>
+                    <div class="image">
+                      <img src="https://jazzobserver.com/wp-content/uploads/2023/05/smooth-jazz.png" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+
+                  <a href="trending.html" class="card c8">
+                    <h2 class="title">Trending</h2>
+                    <div class="image">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFOHJQBx8zEoJqR4Uwi0WWO9gZuCzG9HZ-5Q&s" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFziKOShCi009" class="card c9">
+                    <h2 class="title">Anime</h2>
+                    <div class="image">
+                      <img src="https://i.pinimg.com/736x/38/a8/88/38a88823fff32a5393c9fb43dd7aa240.jpg" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFCfObibaOZbv" class="card c10">
+                    <h2 class="title">Gaming</h2>
+                    <div class="image">
+                      <img src="https://m.media-amazon.com/images/M/MV5BYmYxY2E3MjktYmIxNi00MGZiLWJlM2UtYjQ2ZTkwZDVmMDE2XkEyXkFqcGc@._V1_.jpg" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFCbimwdOYlsl" class="card c11">
+                    <h2 class="title">Focus</h2>
+                    <div class="image">
+                      <img src="https://i.scdn.co/image/ab67706f000000026020f2f6476db518ef747da4" alt="Music thumbnail">
+                    </div>
+                    
+                  </a>
+
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFPrEiAOxgac3" class="card c12">
+                    <h2 class="title">Classical</h2>
+                    <div class="image">
+                      <img src="https://i.scdn.co/image/ab67706f00000002762f5045eac92a372596acca" alt="Music thumbnail">
+                    </div>                    
+                  </a>
+                  
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFAjfauKLOZiv" class="card c1">
+                    <h2 class="title">Funk</h2>
+                    <div class="image">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEGOopbK6py8kWH1U1qusR9iRtJLnhRkKFGA&s" alt="Music thumbnail">
+                    </div>                    
+                  </a>      
+                  
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFLjmiZRss79w" class="card c2">
+                    <h2 class="title">Ambience</h2>
+                    <div class="image">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVsvS8P0UBfFQ3ALAg5ouB_5I0o6ag3UAIDw&s" alt="Music thumbnail">
+                    </div>                    
+                  </a>      
+              
+                  <a href="https://open.spotify.com/genre/0JQ5DAqbMKFAQy4HL4XU2D" class="card c3">
+                    <h2 class="title">Travel</h2>
+                    <div class="image">
+                      <img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84f12fc87343abd946450be1f5" alt="Music thumbnail">
+                    </div>                    
+                  </a>      
+
+                   
+              
+
+            </div>  
+        </div>
+               
+               
+                   
+                    
+            
+    </div>
+    <div class="footer">
+        <div class="company">
+            <h1>Company</h1>
+            <div class="ajpn">
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="https://www.lifeatspotify.com/">Jobs</a></li>
+                    <li><a href="https://newsroom.spotify.com/">News</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="community">
+            <h1>Communities</h1>
+            <div class="creators">
+                <ul>
+                    <li><a href="https://artists.spotify.com/home">For Creators</a></li>
+                    <li><a href="https://developer.spotify.com/">Developers</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="connect">
+            <h1>Connect With Me</h1>
+            <div class="socials">
+                <ul>
+                    <li><a href="https://www.instagram.com/nishchal.7.3/" target="_blank"><i class="bi bi-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/Nishchal7310" target="_blank"><i class="bi bi-facebook"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is already logged in
+            const loggedInUser = localStorage.getItem('musicifyUser');
+            if (loggedInUser) {
+                updateNavForLoggedInUser(JSON.parse(loggedInUser));
+            }
+        });
+        
+        // Function to update navigation for logged in user
+        function updateNavForLoggedInUser(user) {
+            const navigationMenu = document.getElementById('navigation-menu');
+            const signUpMenuItem = document.getElementById('sign-up-menu-item');
+            
+            // Remove sign up link
+            if (signUpMenuItem) {
+                navigationMenu.removeChild(signUpMenuItem);
+            }
+            
+            // Create avatar container
+            const avatarLi = document.createElement('li');
+            avatarLi.className = 'avatar-container';
+            
+            // Create user avatar
+            const avatarItem = document.createElement('div');
+            avatarItem.className = 'user-avatar';
+            
+            // Use first letter of name for avatar
+            avatarItem.textContent = user.name.charAt(0).toUpperCase();
+            
+            // Create dropdown menu
+            const dropdownMenu = document.createElement('div');
+            dropdownMenu.className = 'dropdown-menu';
+            dropdownMenu.innerHTML = `
+                <ul>
+                    <li><a href="#"><i class="bi bi-person"></i> Profile</a></li>
+                    <li><a href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                    <li><a href="#" id="logout-button"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                </ul>
+            `;
+            
+            // Toggle dropdown on avatar click
+            avatarItem.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('active');
+            });
+            
+            // Close dropdown when clicking elsewhere
+            document.addEventListener('click', function() {
+                dropdownMenu.classList.remove('active');
+            });
+            
+            // Add logout functionality
+            avatarLi.appendChild(avatarItem);
+            avatarLi.appendChild(dropdownMenu);
+            navigationMenu.appendChild(avatarLi);
+            
+            // Add event listener to logout button
+            setTimeout(() => {
+                const logoutButton = document.getElementById('logout-button');
+                if (logoutButton) {
+                    logoutButton.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        // Clear user data from localStorage
+                        localStorage.removeItem('musicifyUser');
+                        // Reload page to show sign up link again
+                        window.location.reload();
+                    });
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>
