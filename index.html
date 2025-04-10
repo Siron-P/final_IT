@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Spotify</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Adding user avatar styles */
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #1DB954;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background-color: #282828;
+            border-radius: 4px;
+            width: 180px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 100;
+        }
+        
+        .dropdown-menu ul {
+            list-style: none;
+            padding: 8px 0;
+            margin: 0;
+        }
+        
+        .dropdown-menu ul li {
+            padding: 10px 15px;
+            margin: 0;
+        }
+        
+        .dropdown-menu ul li:hover {
+            background-color: #333;
+        }
+        
+        .dropdown-menu ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-menu.active {
+            display: block;
+        }
+        
+        /* For avatar container in nav */
+        .avatar-container {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <div class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwkxDkgEuPAcFHaJ-v6m90Sh20dQwUxkJl0w&s" alt="Spotify">
+            </div>
+            <div class="home">
+                <a href="index.html"><i class="bi bi-house"></i></a>
+            </div>
+        </div>
+        <div class="right">
+            <div class="nav">
+                <ul id="navigation-menu">
+                    <li><a href="genre.html">Genre</a></li>
+                    <li><a href="trending.html">Trending</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li id="sign-up-menu-item"><a href="signUp.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="body">
+        
+        <div class="playing">
+        <p>Now Playing</p>
+        <div class="album">
+            <img src="https://i.scdn.co/image/ab67616d0000b27365d68228f760107bb230e378" alt="Album Cover">
+        </div>    
+        <div class="info">
+            <p>Flowers</p>
+            <p><a href="https://open.spotify.com/artist/3FRYBFCNEBWMjk6kvwjHQT" target="_blank">Red Pears</p></a>
+        </div>
+        <div class="audio">
+            <audio id="basic-player" controls>
+                <source src="trial.mp3" type="audio/mpeg"><i class="bi bi-chevron-right"></i>
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="bottom">
+            <div class="legal">
+            <ul>
+                <li><a href="https://www.spotify.com/np-en/legal/end-user-agreement/">Legal</a></li>
+                <li><a href="https://www.spotify.com/np-en/safetyandprivacy">Safety</a></li>
+                <li><a href="https://www.spotify.com/np-en/legal/privacy-policy/">Privacy</a></li>
+                <li><a href="https://www.spotify.com/np-en/legal/cookies-policy/">Cookies</a></li>    
+            </ul>
+        </div>
+        <div class="language">
+            <select name="" id="">
+                <option value="1">English</option>
+                <option value="2">Nepali</option>
+                
+            </select>
+        </div>
+        </div>
+        </div>
+        <div class="more">
+            <div class="trending">
+               <div class="bar"> 
+                <h1>Trending Songs</h1>
+                <p><a href="trending.html">Show all</p></a></div>
+                <div class="tsongs">
+                    <div class="song1">
+                        <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7nPBJw-QwOJnFp5EQE8guaWs_mTFivwpD-sagBIXVQEet6S4QmTzKwD6rxnIiKsPoSbw&usqp=CAU " alt="Song1"></a>
+                        <p>Blinding Light</p>
+                        <p>The Weekend</p>
+                    </div>
+                    <div class="song1">
+                        <a href="#"><img src="https://images.genius.com/37398b1942c053d85b1ece9eca1868ab.1000x1000x1.jpg " alt="Song2"></a>
+                        <p>I Love You So</p>
+                        <p>The Walters</p>
+                    </div>
+                    <div class="song1">
+                        <a href=""><img src="https://i.scdn.co/image/ab67616d0000b273de84adf0e48248ea2d769c3e" alt="Song3"></a>
+                        <p>Please Please Please</p>
+                        <p>Sabrina Carpenter</p>
+                    </div>
+                    <div class="song1">
+                        <a href="#"><img src="https://townsquare.media/site/252/files/2011/09/LMFAO.jpg?w=780&q=75" alt="Song4"></a>
+                        <p>Sexy And I Know It</p>
+                        <p>LMFAO</p>
+                    </div>
+                    <div class="song1">
+                        <a href=""><img src="https://i.scdn.co/image/ab67616d0000b273a048415db06a5b6fa7ec4e1a" alt="Song5"></a>
+                        <p>Starboy</p>
+                        <p>The Weekend</p>
+                    </div>
+                </div>
+            </div>
+            <div class="artists">
+                <div class="bar">
+                    <h1>Popular Artists</h1>
+                    <p><a href="artists.html">Show all</a></p>
+                </div>
+                <div class="partists">
+                    <div class="art1">
+                        <a href=""><img src="https://i.scdn.co/image/ab6761610000e5ebcb6926f44f620555ba444fca" alt="Artist1"></a>
+                        <p>Pritam</p>
+                    </div>
+                    <div class="art1">
+                        <a href=""><img src="https://i.scdn.co/image/ab6761610000e5eb5ba2d75eb08a2d672f9b69b7" alt="Artist2"></a>
+                        <p>Arjit Singh</p>
+                    </div>
+                    <div class="art1">
+                        <a href=""><img src="https://i.scdn.co/image/ab6761610000e5eb18f04d5aa82a62371e7afa55" alt="Artist3"></a>
+                        <p>Albatross</p>
+                    </div>
+                    <div class="art1">
+                        <a href=""><img src="https://i.scdn.co/image/ab6761610000e5eb73f95b06dd6a1663571321d7" alt="Artist4"></a>
+                        <p>Sushant KC</p>
+                    </div>
+                    <div class="art1">
+                        <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Kendrick_Lamar_2018_Pulitzer_Prize_ceremony_%283x4_cropped%29.jpg" alt="Artist5"></a>
+                        <p>Kendrick Lamar</p>
+                    </div>
+                </div>
+            </div>
+            <div class="albums">
+                <div class="bar">
+                    <h1>Popular albums</h1>
+                    <p>Show All</p>
+                </div>
+                <div class="palbums">
+                    <div class="album1">
+                        <a href=""><img src="https://i.ytimg.com/vi/7sa6ad5knlQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCsUwxjBHCRHQKQ1qCaldF1TSvbEQ" alt="Album1"></a>
+                        <p>Wake Up Tomorrow</p>
+                        <p>The Weekend</p>
+                    </div>
+                    <div class="album1">
+                        <a href=""><img src="https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png" alt="Album2"></a>
+                        <p>Damn</p>
+                        <p>Kendrick Lamar</p>
+                    </div>
+                    <div class="album1">
+                        <a href=""><img src="https://i.scdn.co/image/ab67616d0000b273698de3a9f0f9794f7760ac7d" alt="Album3"></a>
+                        <p>Roka Yo Samaya</p>
+                        <p>Tribal Rain</p>
+                    </div>
+                    <div class="album1">
+                        <a href=""><img src="https://i.scdn.co/image/ab67616d0000b2736ed9aef791159496b286179f" alt="Album4"></a>
+                        <p>Spiderman Across The SpiderVerse</p>
+                        <p>Metro Boomin</p>
+                    </div>
+                    <div class="album1">
+                        <a href=""><img src="https://i.scdn.co/image/ab67616d0000b273232711f7d66a1e19e89e28c5" alt=""></a>
+                        <p>24K Magic</p>
+                        <p>Bruno Mars</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <div class="company">
+            <h1>Company</h1>
+            <div class="ajpn">
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="https://www.lifeatspotify.com/">Jobs</a></li>
+                    <li><a href="https://newsroom.spotify.com/">News</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="community">
+            <h1>Communities</h1>
+            <div class="creators">
+                <ul>
+                    <li><a href="https://artists.spotify.com/home">For Creators</a></li>
+                    <li><a href="https://developer.spotify.com/">Developers</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="connect">
+            <h1>Connect With Me</h1>
+            <div class="socials">
+                <ul>
+                    <li><a href="https://www.instagram.com/nishchal.7.3/" target="_blank"><i class="bi bi-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/Nishchal7310" target="_blank"><i class="bi bi-facebook"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is already logged in
+            const loggedInUser = localStorage.getItem('musicifyUser');
+            if (loggedInUser) {
+                updateNavForLoggedInUser(JSON.parse(loggedInUser));
+            }
+        });
+        
+        // Function to update navigation for logged in user
+        function updateNavForLoggedInUser(user) {
+            const navigationMenu = document.getElementById('navigation-menu');
+            const signUpMenuItem = document.getElementById('sign-up-menu-item');
+            
+            // Remove sign up link
+            if (signUpMenuItem) {
+                navigationMenu.removeChild(signUpMenuItem);
+            }
+            
+            // Create avatar container
+            const avatarLi = document.createElement('li');
+            avatarLi.className = 'avatar-container';
+            
+            // Create user avatar
+            const avatarItem = document.createElement('div');
+            avatarItem.className = 'user-avatar';
+            
+            // Use first letter of name for avatar
+            avatarItem.textContent = user.name.charAt(0).toUpperCase();
+            
+            // Create dropdown menu
+            const dropdownMenu = document.createElement('div');
+            dropdownMenu.className = 'dropdown-menu';
+            dropdownMenu.innerHTML = `
+                <ul>
+                    <li><a href="#"><i class="bi bi-person"></i> Profile</a></li>
+                    <li><a href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                    <li><a href="#" id="logout-button"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                </ul>
+            `;
+            
+            // Toggle dropdown on avatar click
+            avatarItem.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('active');
+            });
+            
+            // Close dropdown when clicking elsewhere
+            document.addEventListener('click', function() {
+                dropdownMenu.classList.remove('active');
+            });
+            
+            // Add logout functionality
+            avatarLi.appendChild(avatarItem);
+            avatarLi.appendChild(dropdownMenu);
+            navigationMenu.appendChild(avatarLi);
+            
+            // Add event listener to logout button
+            setTimeout(() => {
+                const logoutButton = document.getElementById('logout-button');
+                if (logoutButton) {
+                    logoutButton.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        // Clear user data from localStorage
+                        localStorage.removeItem('musicifyUser');
+                        // Reload page to show sign up link again
+                        window.location.reload();
+                    });
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>
