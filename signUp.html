@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up - Musicify</title>
+  <title>Sign Up</title>
   <link rel="stylesheet" href="style.css    ">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
  </head>
 <body>
+
   <div class="header">
     <div class="left">
       <div class="logo">
-        <a href="index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwkxDkgEuPAcFHaJ-v6m90Sh20dQwUxkJl0w&s" alt="Spotify"></a>
+        <a href="index.html"><img src="spotify.png" alt="Spotify"></a>
       </div>
       <div class="home">
         <a href="index.html"><i class="bi bi-house"></i></a>
@@ -35,7 +36,7 @@
     </div>
     
     <div class="logo">
-      <h1>Musicify</h1>
+      <h1>Invify</h1>
     </div>
     
     <h2>Sign up for free to start listening</h2>
@@ -113,11 +114,11 @@
       
       <div class="checkbox-container">
         <input type="checkbox" id="marketing" name="marketing">
-        <label for="marketing">Share my registration data with Musicify's content providers for marketing purposes.</label>
+        <label for="marketing">Share my registration data with Invify's content providers for marketing purposes.</label>
       </div>
       
       <div class="terms">
-        By clicking on sign-up, you agree to Musicify's <a href="#">Terms and Conditions of Use</a>. To learn more about how Musicify collects, uses, shares and protects your personal data, please see <a href="#">Musicify's Privacy Policy</a>.
+        By clicking on sign-up, you agree to invify's <a href="#">Terms and Conditions of Use</a>. To learn more about how Invify collects, uses, shares and protects your personal data, please see <a href="#">Invify's Privacy Policy</a>.
       </div>
       
       <button type="submit" class="btn btn-signup">SIGN UP</button>
@@ -135,8 +136,8 @@
       var name = document.getElementById("name").value;
       var email = document.getElementById("email").value;
 
-      localStorage.setItem("musicifyUserName", name);
-      localStorage.setItem("musicifyUserEmail", email);
+      localStorage.setItem("InvifyUserName", name);
+      localStorage.setItem("InvifyUserEmail", email);
 
       document.getElementById("success-message").style.display = "block";
 
@@ -145,6 +146,6 @@
       }, 2000);
     });
   </script>
-  
+
 </body>
 </html>
