@@ -22,7 +22,7 @@
         <ul id="navigation-menu">
           <li><a href="genre.html" class="active">Genre</a></li>
           <li><a href="trending.html">Trending</a></li>
-          <li><a href="#">Profile</a></li>
+          <li><a href="profile.html">Profile</a></li>
           <li id="sign-up-menu-item"><a href="#">Sign Up</a></li>
         </ul>
       </div>
@@ -129,95 +129,22 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Check if user is already logged in
-      const loggedInUser = localStorage.getItem('musicifyUser');
-      if (loggedInUser) {
-        updateNavForLoggedInUser(JSON.parse(loggedInUser));
-      }
-      
-      // Handle form submission
-      const signupForm = document.getElementById('signup-form');
-      signupForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const name = document.getElementById('name').value;
-        const day = document.getElementById('day').value;
-        const month = document.getElementById('month').value;
-        const year = document.getElementById('year').value;
-        const genderElements = document.getElementsByName('gender');
-        let gender = '';
-        
-        for (let i = 0; i < genderElements.length; i++) {
-          if (genderElements[i].checked) {
-            gender = genderElements[i].value;
-            break;
-          }
-        }
-        
-        // Create user object
-        const user = {
-          email: email,
-          name: name,
-          dob: `${day}/${month}/${year}`,
-          gender: gender,
-          registeredAt: new Date().toISOString()
-        };
-        
-        // Save user data to localStorage
-        localStorage.setItem('musicifyUser', JSON.stringify(user));
-        
-        // Show success message
-        const successMessage = document.getElementById('success-message');
-        successMessage.style.display = 'block';
-        
-        // Update navigation to show avatar instead of sign up link
-        updateNavForLoggedInUser(user);
-        
-        // Countdown and redirect
-        let seconds = 5;
-        const countdownEl = document.getElementById('countdown');
-        const countdownInterval = setInterval(function() {
-          seconds--;
-          countdownEl.textContent = seconds;
-          
-          if (seconds <= 0) {
-            clearInterval(countdownInterval);
-            window.location.href = 'index.html';
-          }
-        }, 1000);
-      });
+    document.getElementById("signup-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+
+      localStorage.setItem("musicifyUserName", name);
+      localStorage.setItem("musicifyUserEmail", email);
+
+      document.getElementById("success-message").style.display = "block";
+
+      setTimeout(function() {
+        window.location.href = "profile.html";
+      }, 2000);
     });
-    
-    // Function to update navigation for logged in user
-    function updateNavForLoggedInUser(user) {
-      const navigationMenu = document.getElementById('navigation-menu');
-      const signUpMenuItem = document.getElementById('sign-up-menu-item');
-      
-      // Remove sign up link
-      if (signUpMenuItem) {
-        navigationMenu.removeChild(signUpMenuItem);
-      }
-      
-      // Create user avatar
-      const avatarLi = document.createElement('li');
-      const avatarItem = document.createElement('div');
-      avatarItem.className = 'user-avatar';
-      
-      // Use first letter of name for avatar
-      avatarItem.textContent = user.name.charAt(0).toUpperCase();
-      
-      // Add dropdown menu on click (simplified for this example)
-      avatarItem.addEventListener('click', function() {
-        alert('User menu: Profile, Settings, Logout');
-      });
-      
-      avatarLi.appendChild(avatarItem);
-      navigationMenu.appendChild(avatarLi);
-    }
   </script>
+  
 </body>
 </html>

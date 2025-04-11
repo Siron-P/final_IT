@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Spotify</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <div class="logo">
+                <img src="spotify.png" alt="Spotify">
+            </div>
+            <div class="home">
+                <a href="index.html"><i class="bi bi-house"></i></a>
+            </div>
+        </div>
+        <div class="right">
+            <div class="nav">
+                <ul id="navigation-menu">
+                    <li><a href="genre.html">Genre</a></li>
+                    <li><a href="trending.html">Popular</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li id="sign-up-menu-item"><a href="signUp.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+    <div class="playing">
+        <p>Now Playing</p>
+        <div class="album">
+            <img src="https://i.scdn.co/image/ab67616d0000b27365d68228f760107bb230e378" alt="Album Cover">
+        </div>    
+        <div class="info">
+            <p>Flowers</p>
+            <p><a href="https://open.spotify.com/artist/3FRYBFCNEBWMjk6kvwjHQT" target="_blank">Red Pears</p></a>
+        </div>
+        <div class="audio">
+            <audio id="basic-player" controls>
+                <source src="trial.mp3" type="audio/mpeg"><i class="bi bi-chevron-right"></i>
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="bottom">
+            <div class="legal">
+            <ul>
+                <li><a href="https://www.spotify.com/np-en/legal/end-user-agreement/">Legal</a></li>
+                <li><a href="https://www.spotify.com/np-en/safetyandprivacy">Safety</a></li>
+                <li><a href="https://www.spotify.com/np-en/legal/privacy-policy/">Privacy</a></li>
+                <li><a href="https://www.spotify.com/np-en/legal/cookies-policy/">Cookies</a></li>    
+            </ul>
+        </div>
+        <div class="language">
+            <select name="" id="">
+                <option value="1">English</option>
+                <option value="2">Nepali</option>
+                
+            </select>
+        </div>
+        </div>
+        </div>
+    <div class="profilebody">
+        <div class="profilepart">
+            <img src="profileicon.png">
+        <h1 class="myname" id="user-name">Your name</h1>
+        </div>             
+
+    <div class="trending">
+        <div class="barr"> 
+         <h1>My Playlists</h1>
+         <p><a href="trending.html">Show all</p></a></div>
+         <div class="tsongs">
+             <div class="song1">
+                 <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7nPBJw-QwOJnFp5EQE8guaWs_mTFivwpD-sagBIXVQEet6S4QmTzKwD6rxnIiKsPoSbw&usqp=CAU " alt="Song1"></a>
+                 <p>Blinding Light</p>
+                 <p>The Weekend</p>
+             </div>
+             <div class="song1">
+                 <a href="#"><img src="https://images.genius.com/37398b1942c053d85b1ece9eca1868ab.1000x1000x1.jpg " alt="Song2"></a>
+                 <p>I Love You So</p>
+                 <p>The Walters</p>
+             </div>
+             <div class="song1">
+                 <a href=""><img src="https://i.scdn.co/image/ab67616d0000b273de84adf0e48248ea2d769c3e" alt="Song3"></a>
+                 <p>Please Please Please</p>
+                 <p>Sabrina Carpenter</p>
+             </div>
+             <div class="song1">
+                 <a href="#"><img src="https://townsquare.media/site/252/files/2011/09/LMFAO.jpg?w=780&q=75" alt="Song4"></a>
+                 <p>Sexy And I Know It</p>
+                 <p>LMFAO</p>
+             </div>
+         </div>
+     </div>
+     
+    </div>
+    </div>
+    <div class="footer">
+        <div class="company">
+            <h1>Company</h1>
+            <div class="ajpn">
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="https://www.lifeatspotify.com/">Jobs</a></li>
+                    <li><a href="https://newsroom.spotify.com/">News</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="community">
+            <h1>Communities</h1>
+            <div class="creators">
+                <ul>
+                    <li><a href="https://artists.spotify.com/home">For Creators</a></li>
+                    <li><a href="https://developer.spotify.com/">Developers</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="connect">
+            <h1>Connect With Me</h1>
+            <div class="socials">
+                <ul>
+                    <li><a href="https://www.instagram.com/cee_ronn" target="_blank"><i class="bi bi-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/siron.prajapati.1" target="_blank"><i class="bi bi-facebook"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            var savedName = localStorage.getItem("musicifyUserName");
+            if (savedName) {
+              document.getElementById("user-name").textContent = savedName;
+            }
+          </script>
+</body>
+</html>

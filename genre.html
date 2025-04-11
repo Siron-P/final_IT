@@ -6,70 +6,12 @@
     <title>Genre</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        /* Adding user avatar styles */
-        .user-avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background-color: #1DB954;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            position: relative;
-        }
-        
-        .dropdown-menu {
-            position: absolute;
-            top: 40px;
-            right: 0;
-            background-color: #282828;
-            border-radius: 4px;
-            width: 180px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-            display: none;
-            z-index: 100;
-        }
-        
-        .dropdown-menu ul {
-            list-style: none;
-            padding: 8px 0;
-            margin: 0;
-        }
-        
-        .dropdown-menu ul li {
-            padding: 10px 15px;
-            margin: 0;
-        }
-        
-        .dropdown-menu ul li:hover {
-            background-color: #333;
-        }
-        
-        .dropdown-menu ul li a {
-            color: white;
-            text-decoration: none;
-            display: block;
-        }
-        
-        .dropdown-menu.active {
-            display: block;
-        }
-        
-        /* For avatar container in nav */
-        .avatar-container {
-            position: relative;
-        }
-    </style>
 </head>
 <body>
     <div class="header">
         <div class="left">
             <div class="logo">
-                <a href="index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwkxDkgEuPAcFHaJ-v6m90Sh20dQwUxkJl0w&s" alt="Spotify"></a>
+                <a href="index.html"><img src="spotify.png" alt="Spotify"></a>
             </div>
             <div class="home">
                 <a href="index.html"><i class="bi bi-house"></i></a>
@@ -80,7 +22,7 @@
                 <ul id="navigation-menu">
                     <li><a href="genre.html" class="active">Genre</a></li>
                     <li><a href="trending.html">Trending</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="profile.html">Profile</a></li>
                     <li id="sign-up-menu-item"><a href="signUp.html">Sign Up</a></li>
                 </ul>
             </div>
@@ -178,13 +120,6 @@
                     </div>
                     
                   </a>
-                
-               
-                    
-              
-                
-            
-                
                   <a href="trending.html" class="card c7">
                     <h2 class="title">Charts</h2>
                     <div class="image">
@@ -347,17 +282,8 @@
                       <img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84f12fc87343abd946450be1f5" alt="Music thumbnail">
                     </div>                    
                   </a>      
-
-                   
-              
-
             </div>  
         </div>
-               
-               
-                   
-                    
-            
     </div>
     <div class="footer">
         <div class="company">
@@ -384,84 +310,11 @@
             <h1>Connect With Me</h1>
             <div class="socials">
                 <ul>
-                    <li><a href="https://www.instagram.com/nishchal.7.3/" target="_blank"><i class="bi bi-instagram"></i></a></li>
-                    <li><a href="https://www.facebook.com/Nishchal7310" target="_blank"><i class="bi bi-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/cee_ronn" target="_blank"><i class="bi bi-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/siron.prajapati.1" target="_blank"><i class="bi bi-facebook"></i></a></li>
                 </ul>
             </div>
         </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check if user is already logged in
-            const loggedInUser = localStorage.getItem('musicifyUser');
-            if (loggedInUser) {
-                updateNavForLoggedInUser(JSON.parse(loggedInUser));
-            }
-        });
-        
-        // Function to update navigation for logged in user
-        function updateNavForLoggedInUser(user) {
-            const navigationMenu = document.getElementById('navigation-menu');
-            const signUpMenuItem = document.getElementById('sign-up-menu-item');
-            
-            // Remove sign up link
-            if (signUpMenuItem) {
-                navigationMenu.removeChild(signUpMenuItem);
-            }
-            
-            // Create avatar container
-            const avatarLi = document.createElement('li');
-            avatarLi.className = 'avatar-container';
-            
-            // Create user avatar
-            const avatarItem = document.createElement('div');
-            avatarItem.className = 'user-avatar';
-            
-            // Use first letter of name for avatar
-            avatarItem.textContent = user.name.charAt(0).toUpperCase();
-            
-            // Create dropdown menu
-            const dropdownMenu = document.createElement('div');
-            dropdownMenu.className = 'dropdown-menu';
-            dropdownMenu.innerHTML = `
-                <ul>
-                    <li><a href="#"><i class="bi bi-person"></i> Profile</a></li>
-                    <li><a href="#"><i class="bi bi-gear"></i> Settings</a></li>
-                    <li><a href="#" id="logout-button"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
-                </ul>
-            `;
-            
-            // Toggle dropdown on avatar click
-            avatarItem.addEventListener('click', function(e) {
-                e.stopPropagation();
-                dropdownMenu.classList.toggle('active');
-            });
-            
-            // Close dropdown when clicking elsewhere
-            document.addEventListener('click', function() {
-                dropdownMenu.classList.remove('active');
-            });
-            
-            // Add logout functionality
-            avatarLi.appendChild(avatarItem);
-            avatarLi.appendChild(dropdownMenu);
-            navigationMenu.appendChild(avatarLi);
-            
-            // Add event listener to logout button
-            setTimeout(() => {
-                const logoutButton = document.getElementById('logout-button');
-                if (logoutButton) {
-                    logoutButton.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        // Clear user data from localStorage
-                        localStorage.removeItem('musicifyUser');
-                        // Reload page to show sign up link again
-                        window.location.reload();
-                    });
-                }
-            }, 100);
-        }
-    </script>
 </body>
 </html>
