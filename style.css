@@ -1,3 +1,5 @@
+/*{0-292=index page} , {294-367 = genre page} , {369-667 = trending page} , {670-827 = sign up page} , {830-866 = profile page}
+/*index*/
 /*section for header*/
 body{
     margin: 0;
@@ -154,6 +156,8 @@ body{
     width: 360px;
     padding-top: 50px;
 }
+
+/*songs lists*/
 .tsongs{
 display: flex;
 justify-content: space-around;
@@ -260,11 +264,13 @@ text-align: center;
 .album1:hover img{
     background-color: gray;
 }
+
+/*footer*/
+
 .footer{
     color: white;
     display: flex;
     justify-content: space-around;
-    
     background-color: #000000;
 }
 .footer li{
@@ -286,11 +292,12 @@ h1 {
     margin-bottom: 20px;
 }
 
+/*Genre page*/
+
 .grids {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-
 }
 
 .card {
@@ -299,7 +306,6 @@ h1 {
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
-    
     width: 420px;
     padding: 20px;
 }
@@ -349,14 +355,18 @@ h1 {
 .c11 { background-color: #8C68BF; }
 .c12 { background-color: #1F8182; }
 .c13 { background-color: #E5247C; }
+
 .spotify{
     color: white;
     padding-right:100px ;
 }
+
 .grids a{
     text-decoration: none;
     color: white;
 }
+
+/*trending page*/
 
 .belowheader{
     display: block;
@@ -364,12 +374,11 @@ h1 {
     padding: 40px 0;
     background: linear-gradient(to right, #1DB954, #191414);
 }
+
 .belowheader h1,p{
     color: white;
     text-align: justify;
     padding-left: 20px;
-   
-
 }
 .belowheader h1{
     margin-bottom: 10px;
@@ -657,6 +666,8 @@ h1 {
 width: 182px;
 height: 182px;
 }
+
+/*sign up page*/
 .container {
     max-width: 450px;
     margin: 0 auto;
